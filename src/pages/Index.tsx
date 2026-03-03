@@ -18,8 +18,8 @@ const Index = () => {
       <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           <button onClick={() => setActiveTab("home")} className="flex items-center gap-3">
-            <span className="font-heading text-xl font-extrabold uppercase tracking-wider text-foreground">
-              aut<span className="text-primary">sorsa</span>
+            <span className="font-heading text-xl font-extrabold uppercase tracking-wider">
+              <span style={{ color: 'hsl(var(--logo-red))' }}>aut</span><span className="text-foreground"> sorsa</span>
             </span>
           </button>
 
@@ -60,7 +60,7 @@ const Index = () => {
       <footer className="border-t border-border bg-muted/30 py-8">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
           <p className="font-heading font-semibold uppercase tracking-wider">
-            © 2026 <span className="text-primary">AutSorsa</span>. Connecting talent with opportunity.
+            © 2026 <span style={{ color: 'hsl(var(--logo-red))' }}>aut</span><span className="text-foreground"> sorsa</span>. Connecting talent with opportunity.
           </p>
         </div>
       </footer>
