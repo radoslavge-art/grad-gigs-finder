@@ -317,6 +317,14 @@ const CVBuilder = () => {
           </div>
         )}
 
+        {/* Template Selection */}
+        {activeSection === 5 && (
+          <CVTemplateSelector
+            selected={selectedTemplate}
+            onSelect={setSelectedTemplate}
+          />
+        )}
+
         {/* Navigation & Submit */}
         <div className="mt-8 flex items-center justify-between">
           <Button
@@ -326,7 +334,7 @@ const CVBuilder = () => {
           >
             Previous
           </Button>
-          {activeSection < 4 ? (
+          {activeSection < 5 ? (
             <Button onClick={() => setActiveSection(activeSection + 1)}>
               Next
             </Button>
