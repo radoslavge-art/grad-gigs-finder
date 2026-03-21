@@ -4,8 +4,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Plus, Trash2, Download, User, GraduationCap, Briefcase, Wrench, Globe } from "lucide-react";
+import { Plus, Trash2, Download, User, GraduationCap, Briefcase, Wrench, Globe, Layout } from "lucide-react";
 import { toast } from "sonner";
+import CVTemplateSelector from "@/components/CVTemplateSelector";
 
 interface Education {
   id: string;
@@ -48,6 +49,7 @@ const CVBuilder = () => {
     { id: "1", language: "", level: "Intermediate" },
   ]);
   const [activeSection, setActiveSection] = useState(0);
+  const [selectedTemplate, setSelectedTemplate] = useState("classic");
 
   const sections = [
     { label: "Personal", icon: User },
@@ -55,6 +57,7 @@ const CVBuilder = () => {
     { label: "Experience", icon: Briefcase },
     { label: "Skills", icon: Wrench },
     { label: "Languages", icon: Globe },
+    { label: "Template", icon: Layout },
   ];
 
   const addEducation = () => {
@@ -314,6 +317,14 @@ const CVBuilder = () => {
           </div>
         )}
 
+        {/* Template Selection */}
+        {activeSection === 5 && (
+          <CVTemplateSelector
+            selected={selectedTemplate}
+            onSelect={setSelectedTemplate}
+          />
+        )}
+
         {/* Navigation & Submit */}
         <div className="mt-8 flex items-center justify-between">
           <Button
@@ -323,7 +334,7 @@ const CVBuilder = () => {
           >
             Previous
           </Button>
-          {activeSection < 4 ? (
+          {activeSection < 5 ? (
             <Button onClick={() => setActiveSection(activeSection + 1)}>
               Next
             </Button>
