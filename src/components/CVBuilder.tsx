@@ -49,6 +49,7 @@ const CVBuilder = () => {
     { id: "1", language: "", level: "Intermediate" },
   ]);
   const [activeSection, setActiveSection] = useState(0);
+  const [selectedTemplate, setSelectedTemplate] = useState("classic");
 
   const sections = [
     { label: "Personal", icon: User },
@@ -56,6 +57,7 @@ const CVBuilder = () => {
     { label: "Experience", icon: Briefcase },
     { label: "Skills", icon: Wrench },
     { label: "Languages", icon: Globe },
+    { label: "Template", icon: Layout },
   ];
 
   const addEducation = () => {
