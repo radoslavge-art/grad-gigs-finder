@@ -4,8 +4,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Plus, Trash2, Download, User, GraduationCap, Briefcase, Wrench, Globe } from "lucide-react";
+import { Plus, Trash2, Download, User, GraduationCap, Briefcase, Wrench, Globe, Layout } from "lucide-react";
 import { toast } from "sonner";
+import CVTemplateSelector from "@/components/CVTemplateSelector";
 
 interface Education {
   id: string;
